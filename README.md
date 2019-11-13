@@ -31,7 +31,7 @@ For example, below is a component that displays a list of a person's age, name,
 and weight. The component will only re-render when something in the
 database changed an attribute of the `person-id` entity:
 
-```
+```clj
 (defn person [conn person-id]
   (let [p @(pull conn '[*] person-id)]
     [:ul
@@ -72,21 +72,21 @@ Require in Reagent app files:
             [datascript.core :as d]))
 ```
 
-###Important changes
+### Important changes
 
-####0.5.4
+#### 0.5.4
 * added option fields to `q` and `pull`. Currently the only option is
 `:cache :forever`, which will keep the query results caches forever,
 even after the component using that query is un-rendered. (Thanks, [metasoarous](https://github.com/metasoarous))
 
-####0.5.3
+#### 0.5.3
 * added `filter-tx`, `filter-q`, and `filter-pull` to `posh.reagent`
 
-####0.5.1
+#### 0.5.1
 * `get-else` now works with `q`, but still no `pull` in q.
 * `q` with no `:in` args now works properly
 
-####0.5
+#### 0.5
 * You must require `posh.reagent` in your ns's instead of `posh.core`.
   This is because Posh 0.5's core is now front-end agnostic and
   Reagent is just one of the front-ends it will work with (Rum and
