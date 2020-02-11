@@ -7,6 +7,7 @@
                  [org.clojure/clojurescript "1.10.520" :scope "provided"]
                  #_[datascript "0.18.7"]
                  #_[com.datomic/datomic-free "0.9.5407"]
+                 #_[rum "0.11.2"]
                  [org.clojure/core.match "0.3.0"]]
   :plugins [[lein-cljsbuild "1.1.3"]]
   :profiles {:dev {:plugins [[lein-githooks "0.1.0"]]
