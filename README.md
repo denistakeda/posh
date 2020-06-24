@@ -39,6 +39,18 @@ database changed an attribute of the `person-id` entity:
      [:li (:person/age p)]
      [:li (:person/weight p)]]))
 ```
+
+The same example by using rum:
+
+```clj
+(rum/defc person < rum/reactive [conn person-id]
+  (let [p (rum/react (pull conn '[*] person-id))]
+    [:ul
+      [:li (:person/name p)]
+      [:li (:person/age p)]
+      [:li (:person/weight p)]]))
+```
+
 ## Resources
 
 Posh chat room on Gitter: https://gitter.im/mpdairy/posh
